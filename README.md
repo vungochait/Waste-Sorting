@@ -188,6 +188,8 @@ npm run build            # tạo frontend/dist
 npm run preview          # thử bản build tại http://localhost:4173 (proxy /api tới backend)
 ```
 
+Trên Netlify, `netlify.toml` ở gốc repository chỉ định `frontend/` là thư mục build và xuất bản `frontend/dist/`. Cấu hình này chỉ triển khai giao diện; các tính năng gọi API cần một backend FastAPI chạy qua HTTPS. Đặt `VITE_API_URL` thành URL gốc của backend khi build frontend và cho phép origin của frontend trong cấu hình CORS của backend.
+
 ## 7. API
 
 | Method | Endpoint | Mô tả |
