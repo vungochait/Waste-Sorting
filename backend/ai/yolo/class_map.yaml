@@ -1,0 +1,137 @@
+# Ánh xạ tên lớp YOLO -> nhãn EcoAI.
+#
+# Khóa: tên lớp trong model YOLO của bạn, được chuẩn hóa (chữ thường, mọi ký tự khác chữ/số -> "_").
+#   Ví dụ "Plastic bag & wrapper" -> plastic_bag_wrapper ; "cell phone" -> cell_phone
+# Giá trị:
+#   * một khóa hướng dẫn có sẵn trong app/services/categories.py (LABEL_GUIDES), hoặc
+#   * {category: <organic|recyclable|nonrecyclable|hazardous|ewaste|other>, name: <tên tiếng Việt>}
+# Lớp không có trong file này sẽ thuộc nhóm "other" (Rác khác) và hiển thị tên gốc.
+
+# --- Rác tái chế ---
+plastic_bottle: plastic_bottle
+pet_bottle: plastic_bottle
+water_bottle: plastic_bottle
+bottle: plastic_bottle
+other_plastic_bottle: plastic_bottle
+clear_plastic_bottle: plastic_bottle
+glass_bottle: glass_bottle
+glass_jar: glass_bottle
+glass: glass
+broken_glass: {category: nonrecyclable, name: Thủy tinh vỡ}
+can: can
+cans: can
+drink_can: can
+soda_can: can
+aluminium_can: can
+aluminum_can: can
+aluminium_foil: {category: recyclable, name: Giấy bạc nhôm}
+food_can: can
+metal: metal
+metal_can: can
+scrap_metal: metal
+paper: paper
+newspaper: paper
+magazine_paper: paper
+normal_paper: paper
+cardboard: cardboard
+corrugated_carton: cardboard
+carton: cardboard
+other_carton: cardboard
+egg_carton: cardboard
+drink_carton: {category: recyclable, name: Hộp sữa giấy}
+paper_bag: paper
+plastic: plastic
+plastic_container: plastic_container
+other_plastic_container: plastic_container
+plastic_lid: bottle_cap
+bottle_cap: bottle_cap
+plastic_bottle_cap: bottle_cap
+metal_bottle_cap: bottle_cap
+
+# --- Rác vô cơ / khó tái chế ---
+plastic_bag: plastic_bag
+plastic_bag_wrapper: plastic_bag
+plastic_film: plastic_bag
+garbage_bag: plastic_bag
+single_use_carrier_bag: plastic_bag
+other_plastic_wrapper: plastic_bag
+crisp_packet: {category: nonrecyclable, name: Bao bì snack}
+styrofoam: styrofoam
+styrofoam_piece: styrofoam
+foam_cup: styrofoam
+foam_food_container: styrofoam
+disposable_plastic_cup: {category: nonrecyclable, name: Cốc nhựa dùng một lần}
+paper_cup: {category: nonrecyclable, name: Cốc giấy}
+straw: {category: nonrecyclable, name: Ống hút}
+plastic_straw: {category: nonrecyclable, name: Ống hút nhựa}
+plastic_utensils: {category: nonrecyclable, name: Dao nĩa nhựa}
+cigarette: cigarette
+ceramic: ceramic
+broken_ceramic: ceramic
+pottery: ceramic
+trash: trash
+mixed_waste: trash
+shoe: {category: nonrecyclable, name: Giày dép cũ}
+rope_strings: {category: nonrecyclable, name: Dây thừng}
+tissues: {category: nonrecyclable, name: Khăn giấy đã dùng}
+
+# --- Rác hữu cơ ---
+organic: {category: organic, name: Rác hữu cơ}
+biological: {category: organic, name: Rác hữu cơ}
+food: food_waste
+food_waste: food_waste
+leftover: food_waste
+banana: fruit_peel
+banana_peel: fruit_peel
+apple: fruit_peel
+orange: fruit_peel
+fruit: fruit_peel
+fruit_peel: fruit_peel
+vegetable: vegetable
+vegetables: vegetable
+broccoli: vegetable
+carrot: vegetable
+leaf: leaves
+leaves: leaves
+sandwich: food_waste
+pizza: food_waste
+hot_dog: food_waste
+donut: food_waste
+cake: food_waste
+eggshell: {category: organic, name: Vỏ trứng}
+
+# --- Rác nguy hại ---
+battery: battery
+batteries: battery
+car_battery: car_battery
+light_bulb: light_bulb
+bulb: light_bulb
+fluorescent_lamp: light_bulb
+fluorescent_bulb: light_bulb
+chemical: chemical
+chemical_bottle: chemical
+aerosol: {category: hazardous, name: Bình xịt}
+paint_can: {category: hazardous, name: Thùng sơn}
+medicine: {category: hazardous, name: Thuốc hết hạn}
+syringe: {category: hazardous, name: Kim tiêm}
+
+# --- Rác điện tử ---
+phone: phone
+cell_phone: phone
+mobile_phone: phone
+smartphone: phone
+laptop: electronic_device
+keyboard: electronic_device
+mouse: electronic_device
+remote: electronic_device
+tv: electronic_device
+electronics: electronic_device
+e_waste: electronic_device
+electronic_device: electronic_device
+pcb: electronic_component
+circuit_board: electronic_component
+electronic_component: electronic_component
+cable: cable
+wire: cable
+electric_wire: cable
+charger: {category: ewaste, name: Sạc điện thoại}

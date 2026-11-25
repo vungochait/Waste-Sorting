@@ -1,0 +1,25 @@
+# EcoAI backend – Python 3.10 – 3.12
+#
+# QUAN TRỌNG: cài PyTorch TRƯỚC, đúng với phần cứng của bạn (xem README):
+#   GPU NVIDIA (CUDA 12.4): pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+#   Chỉ CPU:                pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+# Sau đó: pip install -r requirements.txt
+
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+python-multipart==0.0.19
+pydantic==2.10.3
+pydantic-settings==2.6.1
+SQLAlchemy==2.0.36
+numpy>=1.26
+opencv-python-headless>=4.10.0.84
+Pillow>=10.4
+PyYAML==6.0.2
+
+# YOLOv8 + SAM / SAM 2 (qua Ultralytics)
+ultralytics>=8.3.40,<9
+
+# Tùy chọn:
+# psycopg2-binary==2.9.10            # nếu dùng PostgreSQL (DATABASE_URL=postgresql+psycopg2://...)
+# SAM 2 bản gốc của Meta (SAM_BACKEND=sam2):
+#   pip install "git+https://github.com/facebookresearch/sam2.git"

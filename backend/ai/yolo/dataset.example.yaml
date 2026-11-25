@@ -1,0 +1,30 @@
+# Mẫu data.yaml cho dataset rác thải định dạng YOLO.
+# Cấu trúc thư mục:
+#   my-waste-dataset/
+#     images/train/*.jpg   images/val/*.jpg
+#     labels/train/*.txt   labels/val/*.txt   (mỗi dòng: class cx cy w h, chuẩn hóa 0–1)
+#
+# Nguồn dữ liệu gợi ý: TACO (tacodataset.org), TrashNet, hoặc ảnh bạn tự gán nhãn
+# (Label Studio, CVAT, Roboflow...). Tên lớp nên khớp ai/yolo/class_map.yaml.
+
+path: D:/datasets/my-waste-dataset
+train: images/train
+val: images/val
+
+names:
+  0: plastic_bottle
+  1: glass_bottle
+  2: can
+  3: paper
+  4: cardboard
+  5: plastic_bag
+  6: ceramic
+  7: food_waste
+  8: fruit_peel
+  9: leaves
+  10: battery
+  11: light_bulb
+  12: chemical
+  13: phone
+  14: cable
+  15: electronic_component
