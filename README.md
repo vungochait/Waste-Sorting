@@ -188,6 +188,12 @@ npm run build            # tạo frontend/dist
 npm run preview          # thử bản build tại http://localhost:4173 (proxy /api tới backend)
 ```
 
+### Triển khai frontend trên Netlify
+
+`netlify.toml` ở thư mục gốc cấu hình Netlify build từ `frontend/` và xuất bản `frontend/dist/`. Các đường dẫn như `/detect` và `/history` được chuyển về `index.html` để React Router xử lý.
+
+Cấu hình này chỉ triển khai frontend. Để sử dụng các tính năng gọi API, backend FastAPI cần có địa chỉ HTTPS riêng; đặt `VITE_API_URL` thành địa chỉ đó trước khi build và thêm origin của frontend vào `CORS_ORIGINS` của backend. Proxy trong Vite chỉ dùng khi chạy `dev` hoặc `preview`.
+
 ## 7. API
 
 | Method | Endpoint | Mô tả |
